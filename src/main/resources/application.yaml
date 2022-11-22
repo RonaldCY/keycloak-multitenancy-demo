@@ -1,0 +1,20 @@
+server.port: 8080
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+#
+#keycloak:
+#  auth-server-url: "http://localhost:8081"
+#  realm: branch1
+#  resource: web
+#  credentials:
+#    provider: secret
+#    secret: egYkqdE5RusA1X6qsjmoghdzyIF6DnTo
+
