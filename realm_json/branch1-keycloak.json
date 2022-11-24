@@ -1,0 +1,11 @@
+{
+	"realm": "branch1",
+	"auth-server-url": "http://host.docker.internal:8081/",
+	"ssl-required": "external",
+	"resource": "web",
+	"public-client": true,
+	"confidential-port": 0,
+	"credentials": {
+		"secret": "egYkqdE5RusA1X6qsjmoghdzyIF6DnTo"
+	}
+}
