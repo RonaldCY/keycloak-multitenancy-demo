@@ -1,4 +1,4 @@
-package com.czetsuyatech.util;
+package com.fhkdemo.multitenant.util;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

@@ -9,7 +9,7 @@
 		<version>2.4.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.czetsuyatech</groupId>
+	<groupId>com.fhkdemo.multitenant</groupId>
 	<artifactId>spring-keycloak-multi-tenant</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-keycloak-multi-tenant</name>

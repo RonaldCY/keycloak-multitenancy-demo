@@ -1,16 +1,13 @@
-package com.czetsuyatech.controllers;
+package com.fhkdemo.multitenant.controllers;
 
 import java.security.Principal;
 
-import com.czetsuyatech.configs.PathBasedConfigResolver;
-import com.czetsuyatech.util.Global;
+import com.fhkdemo.multitenant.util.Global;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.keycloak.representations.AccessToken;
 import org.keycloak.representations.IDToken;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,11 +22,6 @@ public class CatalogController {
 
     @Autowired
     private Global global;
-
-    @GetMapping("check")
-    public String check() {
-        return "Checked!";
-    }
 
     @GetMapping("/tenant/{realm}/catalog")
     public String listCatalog() {
@@ -46,12 +38,6 @@ public class CatalogController {
     public String deleteCatalog() {
         return "deleting catalog by carrier";
     }
-
-
-//    @GetMapping("/tenant/branch2/catalog")
-//    public String listCatalogBranch2() {
-//        return getUserInfo();
-//    }
 
     @SuppressWarnings("unchecked")
     private String getUserInfo() {

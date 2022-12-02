@@ -1,4 +1,4 @@
-package com.czetsuyatech.configs;
+package com.fhkdemo.multitenant.configs;
 
 import java.util.Arrays;
 
