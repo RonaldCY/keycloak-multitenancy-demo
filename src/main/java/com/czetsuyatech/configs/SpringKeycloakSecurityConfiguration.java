@@ -28,13 +28,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
+import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.security.web.authentication.preauth.x509.X509AuthenticationFilter;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -67,15 +67,18 @@ public class SpringKeycloakSecurityConfiguration {
         @Bean
         @Override
         protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
-            // required for bearer-only applications.
-            // return new NullAuthenticatedSessionStrategy();
             return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
         }
 
-        @Override
-        protected AuthenticationEntryPoint authenticationEntryPoint() throws Exception {
-            return new MultitenantKeycloakAuthenticationEntryPoint(adapterDeploymentContext());
+        @Bean
+        protected SessionRegistry buildSessionRegistry() {
+            return new SessionRegistryImpl();
         }
+
+//        @Override
+//        protected AuthenticationEntryPoint authenticationEntryPoint() throws Exception {
+//            return new MultitenantKeycloakAuthenticationEntryPoint(adapterDeploymentContext());
+//        }
 //
 //        @Override
 //        protected KeycloakAuthenticationProcessingFilter keycloakAuthenticationProcessingFilter() throws Exception {
@@ -138,6 +141,7 @@ public class SpringKeycloakSecurityConfiguration {
             super.configure(http);
             http
                     .authorizeRequests()
+//                    .antMatchers("/tenant/branch1/catalog*").hasAnyRole("USER", "ADMIN")
                     .anyRequest().permitAll();
             http.csrf().disable();
         }

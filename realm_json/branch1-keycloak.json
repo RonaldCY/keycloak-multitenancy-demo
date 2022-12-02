@@ -1,11 +1,28 @@
 {
 	"realm": "branch1",
-	"auth-server-url": "http://host.docker.internal:8081/",
+	"auth-server-url": "http://host.docker.internal:8080/",
 	"ssl-required": "external",
 	"resource": "web",
-	"public-client": true,
-	"confidential-port": 0,
+	"bearer-only": false,
 	"credentials": {
-		"secret": "egYkqdE5RusA1X6qsjmoghdzyIF6DnTo"
+		"secret": "IMIMLUqh7K7e73VuZY8HtVyOm81qSYaf"
+	},
+	"policy-enforcer": {
+		"enforcement-mode" : "ENFORCING",
+		"paths": [
+			{
+				"path" : "/tenant/branch1/catalog",
+				"methods" : [
+					{
+						"method": "GET",
+						"scopes" : ["view"]
+					},
+					{
+						"method": "POST",
+						"scopes" : ["create"]
+					}
+				]
+			}
+		]
 	}
 }

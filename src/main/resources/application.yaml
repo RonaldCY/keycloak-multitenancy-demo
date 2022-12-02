@@ -1,4 +1,4 @@
-server.port: 8080
+server.port: 8000
 
 logging:
   level:
@@ -9,12 +9,27 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
-#
-#keycloak:
-#  auth-server-url: "http://localhost:8081"
-#  realm: branch1
-#  resource: web
-#  credentials:
-#    provider: secret
-#    secret: egYkqdE5RusA1X6qsjmoghdzyIF6DnTo
+
+keycloak:
+  realm: carrier
+  auth-server-url: http://host.docker.internal:8080/
+  ssl-required: external
+  resource: web
+  bearer-only: false
+  credentials:
+    secret: Wi7C2J6xfYl1WMAt7xnAgenaQkQ2dVmH
+  security-constraints:
+    - authRoles:
+        - ADMIN
+        - USER
+      securityCollections:
+        - patterns:
+            - /tenant/*
+          name: tenant management
+    - authRoles:
+        - MAINTAINER
+      securityCollections:
+        - patterns:
+            - /carrier/*
+          name: carrier management
 

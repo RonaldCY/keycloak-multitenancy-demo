@@ -2,14 +2,19 @@ package com.czetsuyatech.controllers;
 
 import java.security.Principal;
 
+import com.czetsuyatech.configs.PathBasedConfigResolver;
+import com.czetsuyatech.util.Global;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.keycloak.representations.AccessToken;
 import org.keycloak.representations.IDToken;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Edward P. Legaspi | czetsuya@gmail.com
@@ -18,15 +23,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CatalogController {
 
-    @GetMapping("/tenant/branch1/catalog")
-    public String listCatalogBranch1() {
-        return getUserInfo();
+    @Autowired
+    private Global global;
+
+    @GetMapping("check")
+    public String check() {
+        return "Checked!";
     }
 
-    @GetMapping("/tenant/branch2/catalog")
-    public String listCatalogBranch2() {
-        return getUserInfo();
+    @GetMapping("/tenant/{realm}/catalog")
+    public String listCatalog() {
+        return "At " + global.getRealm() + "\n" + getUserInfo();
     }
+
+    @PostMapping("/tenant/{realm}/catalog")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String createCatalog() {
+        return "creating catalog at " + global.getRealm();
+    }
+
+    @DeleteMapping("/carrier/catalog")
+    public String deleteCatalog() {
+        return "deleting catalog by carrier";
+    }
+
+
+//    @GetMapping("/tenant/branch2/catalog")
+//    public String listCatalogBranch2() {
+//        return getUserInfo();
+//    }
 
     @SuppressWarnings("unchecked")
     private String getUserInfo() {
