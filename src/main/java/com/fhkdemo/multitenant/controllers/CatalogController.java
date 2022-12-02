@@ -14,7 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author Edward P. Legaspi | czetsuya@gmail.com
+ * @author ronald chan  | ronald_chan@fujitsu.com.com
  */
 
 @RestController

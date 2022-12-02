@@ -10,7 +10,7 @@
 //import org.springframework.security.web.util.matcher.RequestMatcher;
 //
 ///**
-// * @author Edward P. Legaspi | czetsuya@gmail.com
+// * @author ronald chan  | ronald_chan@fujitsu.com.com
 // */
 //public class MultitenantKeycloakAuthenticationEntryPoint extends KeycloakAuthenticationEntryPoint {
 //

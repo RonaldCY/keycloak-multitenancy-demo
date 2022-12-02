@@ -40,7 +40,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 /**
- * @author Edward P. Legaspi | czetsuya@gmail.com
+ * @author ronald chan  | ronald_chan@fujitsu.com.com
  */
 public class SpringKeycloakSecurityConfiguration {
 
