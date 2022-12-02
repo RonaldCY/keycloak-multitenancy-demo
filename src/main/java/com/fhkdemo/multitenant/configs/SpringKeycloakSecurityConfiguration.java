@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.session.RegisterSessionAu
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
 /**
- * @author Edward P. Legaspi | czetsuya@gmail.com
+ * @author ronald chan | ncronaldchan@gmail.com
  */
 public class SpringKeycloakSecurityConfiguration {
 
