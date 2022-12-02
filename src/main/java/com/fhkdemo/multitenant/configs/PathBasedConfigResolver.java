@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import static org.keycloak.adapters.KeycloakDeploymentBuilder.loadAdapterConfig;
 
 /**
- * @author Edward P. Legaspi | czetsuya@gmail.com
+ * @author ronald chan | ncronaldchan@gmail.com
  */
 @ConditionalOnProperty(prefix = "keycloak.config", name = "resolver", havingValue = "path")
 public class PathBasedConfigResolver implements KeycloakConfigResolver {
