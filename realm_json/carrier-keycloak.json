@@ -1,10 +1,10 @@
 {
 	"realm": "carrier",
-	"auth-server-url": "http://host.docker.internal:8080/",
+	"auth-server-url": "http://host.docker.internal:8443/",
 	"ssl-required": "external",
 	"resource": "web",
 	"bearer-only": false,
 	"credentials": {
-		"secret": "Wi7C2J6xfYl1WMAt7xnAgenaQkQ2dVmH"
+		"secret": "1evtB3OlmMbhyvgvJcv42tuXk9O4On4y"
 	}
 }

@@ -1,11 +1,11 @@
 {
 	"realm": "branch1",
-	"auth-server-url": "http://host.docker.internal:8080/",
+	"auth-server-url": "http://host.docker.internal:8443/",
 	"ssl-required": "external",
 	"resource": "web",
 	"bearer-only": false,
 	"credentials": {
-		"secret": "IMIMLUqh7K7e73VuZY8HtVyOm81qSYaf"
+		"secret": "ZVMH2N4UErZxJcr2TVkgRLaKltJkcQwX"
 	},
 	"policy-enforcer": {
 		"enforcement-mode" : "ENFORCING",
