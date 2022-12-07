@@ -1,8 +1,8 @@
 
 ## Usage
 
-- [Spring Boot 2.4.0](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
-- [KeyCloak 20.0.0](https://www.keycloak.org/documentation)
+- [Spring Boot 2.7.x](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+- [KeyCloak 20.x.x](https://www.keycloak.org/documentation)
 
 ## Setup Environment
 - Java 11
