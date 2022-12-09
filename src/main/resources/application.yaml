@@ -21,18 +21,4 @@ keycloak:
   bearer-only: true
   credentials:
     secret: 1evtB3OlmMbhyvgvJcv42tuXk9O4On4y
-  security-constraints:
-    - authRoles:
-        - ADMIN
-        - USER
-      securityCollections:
-        - patterns:
-            - /tenant/*
-          name: tenant management
-    - authRoles:
-        - MAINTAINER
-      securityCollections:
-        - patterns:
-            - /carrier/*
-          name: carrier management
 
