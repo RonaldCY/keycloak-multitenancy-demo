@@ -139,11 +139,19 @@ public class SpringKeycloakSecurityConfiguration {
 //                    .sessionAuthenticationStrategy(sessionAuthenticationStrategy())
 
             super.configure(http);
-            http
+//            http
+//                    .authorizeRequests()
+////                    .antMatchers("/tenant/branch1/catalog*").hasAnyRole("USER", "ADMIN")
+//                    .anyRequest().permitAll();
+            http.csrf().disable()
                     .authorizeRequests()
-//                    .antMatchers("/tenant/branch1/catalog*").hasAnyRole("USER", "ADMIN")
-                    .anyRequest().permitAll();
-            http.csrf().disable();
+                    .antMatchers("/check").permitAll()
+                    .and()
+                    .authorizeRequests()
+                    .antMatchers("/tenant/branch1/catalog*").hasAnyRole("USER", "ADMIN")
+                    .and()
+                    .authorizeRequests()
+                    .anyRequest().denyAll();
         }
 ////                     keycloak filters for securisation
 //                    .and().addFilterBefore(keycloakPreAuthActionsFilter(), LogoutFilter.class)

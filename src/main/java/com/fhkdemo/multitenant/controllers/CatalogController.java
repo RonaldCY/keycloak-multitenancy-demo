@@ -23,6 +23,11 @@ public class CatalogController {
     @Autowired
     private Global global;
 
+    @GetMapping("check")
+    public String healthCheck() {
+        return "It is healthy";
+    }
+
     @GetMapping("/tenant/{realm}/catalog")
     public String listCatalog() {
         return "At " + global.getRealm() + "\n" + getUserInfo();

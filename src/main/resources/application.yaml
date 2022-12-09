@@ -18,7 +18,7 @@ keycloak:
   auth-server-url: http://host.docker.internal:8443/
   ssl-required: external
   resource: web
-  bearer-only: false
+  bearer-only: true
   credentials:
     secret: 1evtB3OlmMbhyvgvJcv42tuXk9O4On4y
   security-constraints:
