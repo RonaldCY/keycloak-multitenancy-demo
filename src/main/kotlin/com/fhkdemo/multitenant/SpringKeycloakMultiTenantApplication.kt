@@ -1,14 +1,12 @@
 package com.fhkdemo.multitenant
 
+import com.fhkdemo.multitenant.configs.PathBasedConfigResolver
 import org.keycloak.adapters.KeycloakConfigResolver
-import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Import
 
 @SpringBootApplication(exclude = [DataSourceAutoConfiguration::class])
 //@Import(KeycloakSpringBootConfigResolver::class)

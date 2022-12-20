@@ -1,4 +1,4 @@
-package com.fhkdemo.multitenant
+package com.fhkdemo.multitenant.configs
 
 import org.keycloak.adapters.KeycloakConfigResolver
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver

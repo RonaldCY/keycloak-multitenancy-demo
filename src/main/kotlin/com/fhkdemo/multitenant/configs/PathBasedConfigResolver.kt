@@ -1,15 +1,12 @@
-package com.fhkdemo.multitenant
+package com.fhkdemo.multitenant.configs
 
 import org.keycloak.adapters.KeycloakConfigResolver
 import org.keycloak.adapters.KeycloakDeployment
 import org.keycloak.adapters.KeycloakDeploymentBuilder
 import org.keycloak.adapters.spi.HttpFacade
-import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver
-import org.keycloak.adapters.springboot.KeycloakSpringBootProperties
 import org.keycloak.representations.adapters.config.AdapterConfig
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
-import org.springframework.context.annotation.Configuration
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
