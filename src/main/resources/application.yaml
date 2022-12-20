@@ -6,6 +6,9 @@ server:
 logging:
   level:
     org:
+      keycloak: DEBUG
+      springframework:
+        security: DEBUG
       hibernate:
         SQL: DEBUG
         type:
