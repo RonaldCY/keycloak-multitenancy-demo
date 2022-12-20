@@ -1,0 +1,7 @@
+{
+	"realm": "internal",
+	"auth-server-url": "http://host.docker.internal:8443/",
+	"ssl-required": "external",
+	"resource": "web",
+	"bearer-only": false
+}

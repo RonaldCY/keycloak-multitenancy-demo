@@ -17,11 +17,23 @@ logging:
               BasicBinder: TRACE
 
 keycloak:
-  realm: carrier
+  realm: internal
   auth-server-url: http://host.docker.internal:8443/
   ssl-required: external
   resource: web
   bearer-only: true
-  credentials:
-    secret: 1evtB3OlmMbhyvgvJcv42tuXk9O4On4y
+  security-constraints:
+    - authRoles:
+        - USER
+        - ADMIN
+      securityCollections:
+        - patterns:
+            - /tenant/*
+          name: tenant management
+    - authRoles:
+        - MAINTAINER
+      securityCollections:
+        - patterns:
+            - /carrier/*
+          name: carrier management
 
